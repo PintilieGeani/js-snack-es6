@@ -36,7 +36,7 @@
 // Output
 // console.log(biciLeggera)
 
-// Risoluzione del codice
+// Risoluzione codice
 // Raccolta dati:
 const bici = [
     {
@@ -83,9 +83,6 @@ const bici = [
 
 let biciLeggera = bici[0]
 
-
-console.log("sono la prima bici", biciLeggera)
-
 for(let i = 0; i < bici.length; i++){
     curBici = bici[i]
     if(curBici.peso < biciLeggera.peso){
@@ -94,7 +91,7 @@ for(let i = 0; i < bici.length; i++){
 }
 
 // Output
-console.log( "Sono la bici leggera", biciLeggera)
+console.log("Sono la bici leggera", biciLeggera)
 
 
 //********************************************************************
@@ -113,6 +110,7 @@ console.log( "Sono la bici leggera", biciLeggera)
 // Risoluzione codice
 // Raccolta dati:
 let squadre = [
+    
     {
         nome: "Roma",
         punti: Math.floor(Math.random()* 10 + 1),
@@ -153,4 +151,57 @@ let squadre = [
 let nomeFalli = []
 
 // Risoluzione logica
-for()
+for(let i = 0; i < squadre.length; i++){
+    curSquadra = squadre[i]
+    nomeFalli.push({nome: curSquadra.nome, falliSubiti: curSquadra.falliSubiti})
+}
+
+// Output
+console.table(nomeFalli)
+
+
+//********************************************************************
+// Snack 3 BONUS
+// *******************************************************************
+// Raccolta dati:
+// Creare l'array iniziale di numeri
+// Creare varibile "min" per il numero più piccolo
+// Creare variabile "max" per il valore più grande.
+// Creare variabile "selezionati" per richiamare la funzione
+
+// Risoluzione Logica:
+// funzione: dato un array di numeri, scorri con un ciclo for dove la condizione di partenza è la variabile min e la condizione di uscita è la variabile max, per ogni elemento fare push in un nuovo array "result". Return: "result"
+
+// Output
+// console.log(selezionati)
+
+// Risoluzione codice
+// Raccolta dati:
+
+function numeri(){
+    let result = []
+    for(let i = 1; i <= 10; i++){
+        result.push(i)
+    } 
+    return result;
+}
+
+const numeriArray = numeri()
+
+const minimo = 3
+const massimo = 5
+
+// Risoluzione logica
+function selezionaIndici(numbersArr, min, max){
+    let result = []
+    for(let i = min; i <= max; i++){
+        curElem = numbersArr[i]
+        result.push(curElem)
+    }
+    return result
+}
+
+const selezionati = selezionaIndici(numeriArray, minimo, massimo)
+
+// Output
+console.log(selezionati)
